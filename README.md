@@ -4,6 +4,8 @@
 
 A curated, decision-guide awesome-list for the static-first web: when a generated bundle of HTML/CSS/JS served from a CDN edge is enough, and when you genuinely need a server rendering pages on every request.
 
+**Licensing note:** every resource below is tagged with its license — an open-source license (MIT, Apache-2.0, GPL-3.0, etc.) or `proprietary, hosted` for closed-source SaaS. Most static site generators are genuinely FOSS; most of the *hosting* people default to is not. Self-hostable FOSS alternatives are called out explicitly wherever a category leans proprietary, so "static-first" doesn't quietly become "one vendor's platform first."
+
 ---
 
 ## Introduction
@@ -40,36 +42,43 @@ A lot of real products land in between: static shell + islands of interactivity 
 
 ## Static Site Generators
 
-- [Astro](https://astro.build) — content-focused, ships zero JS by default, islands architecture built in.
-- [Eleventy (11ty)](https://www.11ty.dev) — minimal, unopinionated, works with almost any templating language.
-- [Hugo](https://gohugo.io) — Go-based, extremely fast builds, popular for large content sites.
-- [Zola](https://www.getzola.org) — Rust-based, single-binary, Hugo-adjacent philosophy.
-- [Jekyll](https://jekyllrb.com) — the original GitHub Pages generator, Ruby-based, huge plugin ecosystem.
-- [Next.js static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) — React-based SSG mode for teams already in the Next ecosystem who don't need per-request SSR.
+- [Astro](https://astro.build) `(MIT)` — content-focused, ships zero JS by default, islands architecture built in.
+- [Eleventy (11ty)](https://www.11ty.dev) `(MIT)` — minimal, unopinionated, works with almost any templating language.
+- [Hugo](https://gohugo.io) `(Apache-2.0)` — Go-based, extremely fast builds, popular for large content sites.
+- [Zola](https://www.getzola.org) `(MIT)` — Rust-based, single-binary, Hugo-adjacent philosophy.
+- [Jekyll](https://jekyllrb.com) `(MIT)` — the original GitHub Pages generator, Ruby-based, huge plugin ecosystem.
+- [Next.js static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) `(MIT)` — React-based SSG mode for teams already in the Next ecosystem who don't need per-request SSR.
 
 ## Islands / Partial Hydration Architectures
 
-- [Astro Islands](https://docs.astro.build/en/concepts/islands/) — ship HTML by default, hydrate only the interactive components you mark.
-- [Fresh](https://fresh.deno.dev) — Deno's islands-based framework, zero client JS unless a component opts in.
-- [Qwik](https://qwik.dev) — resumability instead of hydration; aims to ship near-zero JS on load regardless of app size.
+- [Astro Islands](https://docs.astro.build/en/concepts/islands/) `(MIT)` — ship HTML by default, hydrate only the interactive components you mark.
+- [Fresh](https://fresh.deno.dev) `(MIT)` — Deno's islands-based framework, zero client JS unless a component opts in.
+- [Qwik](https://qwik.dev) `(MIT)` — resumability instead of hydration; aims to ship near-zero JS on load regardless of app size.
 
 ## Static Hosting & CDN Platforms
 
-- [Netlify](https://www.netlify.com) — static hosting + build pipeline + edge/serverless functions for the dynamic bits.
-- [Cloudflare Pages](https://pages.cloudflare.com) — static hosting on Cloudflare's edge network, pairs naturally with Cloudflare Workers.
-- [GitHub Pages](https://pages.github.com) — free static hosting straight from a repo, the simplest possible deploy target.
-- [Vercel](https://vercel.com) — static hosting with edge/serverless functions, widely used with Next.js static export and Astro.
+- [Netlify](https://www.netlify.com) `(proprietary, hosted)` — static hosting + build pipeline + edge/serverless functions for the dynamic bits.
+- [Cloudflare Pages](https://pages.cloudflare.com) `(proprietary, hosted)` — static hosting on Cloudflare's edge network, pairs naturally with Cloudflare Workers.
+- [GitHub Pages](https://pages.github.com) `(proprietary, hosted, free tier)` — free static hosting straight from a repo, the simplest possible deploy target.
+- [Vercel](https://vercel.com) `(proprietary, hosted)` — static hosting with edge/serverless functions, widely used with Next.js static export and Astro.
+
+**Self-hostable FOSS alternatives** — every platform above is closed-source SaaS. If you want the static-first *hosting* story to be as FOSS as the generators, these are real self-hostable options:
+- [Caddy](https://caddyserver.com) `(Apache-2.0)` — a web server that serves a static build with a two-line config and automatic HTTPS; the simplest genuinely-FOSS deploy target.
+- [Coolify](https://coolify.io) `(Apache-2.0)` — self-hostable PaaS (a self-hosted Netlify/Vercel alternative) that can deploy static sites straight from a git push.
+- [CapRover](https://caprover.com) `(Apache-2.0)` — another self-hostable PaaS with one-click static-site app definitions.
 
 ## Headless CMS Pairings
 
-- [Contentful](https://www.contentful.com) — API-first CMS, content fetched at build time for SSG.
-- [Sanity](https://www.sanity.io) — structured content platform with a real-time API, commonly paired with Astro/Next static builds.
-- [Strapi](https://strapi.io) — self-hostable open-source headless CMS.
-- [Decap CMS](https://decapcms.org) (formerly Netlify CMS) — git-based content editing, no separate database — content lives in your repo alongside the generator.
+- [Contentful](https://www.contentful.com) `(proprietary, hosted)` — API-first CMS, content fetched at build time for SSG.
+- [Sanity](https://www.sanity.io) `(proprietary, hosted)` — structured content platform with a real-time API, commonly paired with Astro/Next static builds.
+- [Strapi](https://strapi.io) `(MIT, self-hostable)` — self-hostable open-source headless CMS.
+- [Directus](https://directus.io) `(GPL-3.0-ish core, self-hostable)` — wraps an existing SQL database in an instant REST/GraphQL API + admin UI; check current licensing terms per version before depending on it commercially.
+- [Payload CMS](https://payloadcms.com) `(MIT, self-hostable)` — TypeScript-native headless CMS, config-as-code.
+- [Decap CMS](https://decapcms.org) `(MIT, self-hostable)` (formerly Netlify CMS) — git-based content editing, no separate database — content lives in your repo alongside the generator.
 
 ## Adding Dynamic Bits Without a Full Server
 
-- Edge/serverless functions alongside a static deploy (Netlify Functions, Cloudflare Workers, Vercel Functions) for the handful of routes that genuinely need per-request logic.
+- Edge/serverless functions alongside a static deploy (Netlify Functions, Cloudflare Workers, Vercel Functions — all `proprietary, hosted`) for the handful of routes that genuinely need per-request logic.
 - Client-side data fetching after the static shell loads, for anything that's per-user but not SEO-critical (cart state, auth-gated widgets).
 - Incremental/on-demand static regeneration where the platform supports it, for content that updates more often than a full rebuild is practical but still doesn't need per-request computation.
 
