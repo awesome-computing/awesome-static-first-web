@@ -1,0 +1,37 @@
+name: Suggest a resource
+description: Propose a tool, platform, or piece of evidence for the list
+labels: ["resource"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Static Site Generators
+        - Islands / Partial Hydration Architectures
+        - Static Hosting & CDN Platforms
+        - Headless CMS Pairings
+        - Adding Dynamic Bits Without a Full Server
+        - Further Reading
+        - New category (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this belong here?
+      description: One or two sentences on relevance to the static-first-vs-SSR decision.
+    validations:
+      required: true
