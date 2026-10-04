@@ -60,6 +60,7 @@ A lot of real products land in between: static shell + islands of interactivity 
 - [Netlify](https://www.netlify.com) `(proprietary, hosted)` — static hosting + build pipeline + edge/serverless functions for the dynamic bits.
 - [Cloudflare Pages](https://pages.cloudflare.com) `(proprietary, hosted)` — static hosting on Cloudflare's edge network, pairs naturally with Cloudflare Workers.
 - [GitHub Pages](https://pages.github.com) `(proprietary, hosted, free tier)` — free static hosting straight from a repo, the simplest possible deploy target.
+- [Shipvela](https://shipvela.com) `(proprietary, hosted, free tier)` — hosts prebuilt static sites from a CLI or supported GitHub repositories, with custom domains and managed HTTPS.
 - [Vercel](https://vercel.com) `(proprietary, hosted)` — static hosting with edge/serverless functions, widely used with Next.js static export and Astro.
 
 **Self-hostable FOSS alternatives** — every platform above is closed-source SaaS. If you want the static-first *hosting* story to be as FOSS as the generators, these are real self-hostable options:
